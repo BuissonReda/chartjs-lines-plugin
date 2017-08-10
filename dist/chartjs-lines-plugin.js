@@ -32,7 +32,7 @@ Chart.pluginService.register({
           if (xValue != null && yValue != null) {
             ctx.beginPath()
             ctx.moveTo(xValue, yValue)
-            ctx.lineTo(canvas.width - 15, yValue) // Another offset to fit the line with the canvas
+            ctx.lineTo(canvas.width - (xScale.maxWidth - xScale.width), yValue)
             ctx.strokeStyle = style
             ctx.stroke()
           }
@@ -78,7 +78,7 @@ Chart.pluginService.register({
           if (xValue != null && yValue != null) {
             ctx.beginPath()
             ctx.moveTo(xValue, yValue)
-            ctx.lineTo(xValue, canvas.height - 37)
+            ctx.lineTo(xValue, canvas.height - yScale.margins.bottom)
             ctx.strokeStyle = style
             ctx.stroke()
           }
